@@ -1,0 +1,9 @@
+<div class="flex gap-[2px] items-center">
+	{% # Loop door de volle sterren. %}
+	{%- for i in (1..4) -%}
+		<img src="{{ 'star.svg' | asset_url }}" width="11.1" height="10.5" alt="Volle ster">
+	{%- endfor -%}
+	
+	<img src="{{ 'half-star.svg' | asset_url }}" width="11.1" height="10.5" alt="Halve ster">
+	<p class="text-xs ml-2">6,4 | 146 reviews</p>
+</div>
