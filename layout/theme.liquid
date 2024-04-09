@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="{{ 'compiled-tailwind.css' | asset_url }}">
 </head>
 <body>
+    {%- section 'section-navigation-bar' -%}
+
     {{ content_for_layout }}
 
-    <script src="{{ 'main.js' | asset_url }}" defer></script>
+    <script src="{{ 'main.js' | asset_url }}" type="module" defer></script>
 </body>
 </html>
