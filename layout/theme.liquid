@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {{ content_for_header }}
+    <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'compiled-tailwind.css' | asset_url }}">
+</head>
+<body>
+    {{ content_for_layout }}
+
+    <script src="{{ 'main.js' | asset_url }}" defer></script>
+</body>
+</html>
