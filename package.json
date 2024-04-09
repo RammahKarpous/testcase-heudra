@@ -4,5 +4,8 @@
 	},
 	"scripts": {
 		"watch": "tailwindcss -i ./assets/tailwind.css -o ./assets/compiled-tailwind.css --watch"
+	},
+	"dependencies": {
+		"gsap": "^3.12.5"
 	}
 }
