@@ -3,9 +3,12 @@ module.exports = {
 	content: ["./**/*.liquid"],
 	theme: {
 		extend: {
+			container: {
+				center: true,
+				padding: ".6rem",
+			},
 			colors: {
 				body: "#F8F8F8",
-				white: "#FFFFFF",
 				black: "#05102B",
 				orange: "#C98C1C",
 				yellow: "#EBBF23",

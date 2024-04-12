@@ -1,0 +1,31 @@
+<section class="relative">
+    <div class="px-2 py-1 bg-body">
+        {%- render 'snippet-reviews' -%}
+    </div>
+    
+    <div class="relative z-10 px-1 py-2 bg-gradient-to-r from-blue-dark to-blue-medium logo-wrapper">
+        {%- render 'logo' -%}
+    </div>
+
+    <div class="z-0 mobile-nav">
+        {%- render 'component-mobile-navigation' -%}
+    </div>
+</section>
+
+{%- style -%}
+    .logo-wrapper {
+        clip-path: polygon(100% 0, 100% 30%, 85% 30%, 80% 100%, 0 100%, 0 0);
+    }
+{%- endstyle -%}
+
+{% schema %}
+{
+    "name": "Navigation bar",
+    "settings": [],
+    "presets": [
+        {
+            "name": "navigation-bar"
+        }
+    ]
+}
+{% endschema %}

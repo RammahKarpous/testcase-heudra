@@ -1,0 +1,23 @@
+{%- liquid
+  assign bars = 'h-[4px] w-full bg-blue-dark transition-all bar'
+-%}
+
+<div class="absolute right-0 z-10 flex flex-col justify-around w-16 h-16 p-5 -top-12 hamburger-menu" id="hamburger-menu">
+  <div class="{{ bars }}" id="top-bar"></div>
+  <div class="{{ bars }}" id="middle-bar"></div>
+  <div class="{{ bars }}" id="bottom-bar"></div>
+</div>
+
+{%- style -%}
+  .open#top-bar {
+    transform: translateY(5px) rotate(-495deg);
+  }
+
+  .open#middle-bar {
+    opacity: 0;
+  }
+
+  .open#bottom-bar {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+{%- endstyle -%}

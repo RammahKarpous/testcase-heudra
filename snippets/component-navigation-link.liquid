@@ -1,0 +1,23 @@
+{% comment %}
+The navigation link component is used for the mobile links (main and dropdown) and for the desktop dropdown links. 
+
+Accepts:
+    - link_url:     {String}    The destination url of the link
+    - link_text:    {String}    The text to be displayed
+    - has_graphic:  {Boolean}   Whether or not do display the aanhangwagen graphic
+    - styles:       {String}    Spefic styles for the navigation link
+{% endcomment %}
+
+<a href="{{ link_url }}" class="flex items-center gap-8 transition-all group {{ styles }}">
+    {%- if has_graphic == true -%}
+        <img src="{{ 'aanhangwagen.png' | asset_url }}" width="55" height="82.82" class="pr-5 border-r border-gray-border" alt="Aanhangwagen icoon">
+    {%- endif -%}
+
+    <span class="flex items-center gap-2">
+        {{ link_text }}
+
+        <span class="transition group-hover:translate-x-2">
+            {%- render 'icon-arrow-right' -%}
+        </span>
+    </span>
+</a>
