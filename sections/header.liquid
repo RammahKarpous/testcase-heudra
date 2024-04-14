@@ -1,6 +1,27 @@
-<section>
-    {%- render 'button', text: 'This is a button' -%}
+<section class="relative -z-10 h-[400px] md:h-[670px] bg-center bg-no-repeat header-image" style="background-image: url({{ 'header-image.png' | asset_url }})">
+    <span class="absolute w-full h-full gradient"></span>
+
+    <div class="max-w-screen-xl px-4 mx-auto">
+        
+    </div>
 </section>
+
+{%- style -%}
+	.header-image {
+		background-size: 2000px;
+		background-position: center bottom;
+	}
+	
+	@media screen and (min-width: 400px) {
+		.header-image {
+			background-size: cover;
+		}
+	}
+
+  .gradient {
+		background: transparent linear-gradient(62deg, #263761 0%, #26376100 100%) 0% 0% no-repeat padding-box;
+  }
+{%- endstyle -%}
 
 {% schema %}
 {

@@ -10,17 +10,19 @@
     "ignore": [],
     "wrap": 80,
     "indentSize": 4,
-    "preserveLine": 2,
+    "preserveLine": 4,
     "endNewline": true,
     "liquid": {
       "indentAttribute": true,
       "lineBreakSeparator": "before",
       "normalizeSpacing": true,
       "quoteConvert": "single",
+      "indentSize": 4,
       "ignoreTagList": []
     },
     "markup": {
       "quoteConvert": "double",
+      "indentSize": 4,
       "selfCloseSpace": true,
       "delimiterTerminus": "inline",
       "stripAttributeLines": true,

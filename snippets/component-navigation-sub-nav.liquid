@@ -1,0 +1,10 @@
+    <ul class="absolute invisible top-full group-hover/main-nav:visible w-52 bg-body">
+      {%- for link in link.links -%}
+        <li>
+          <a href="{{ link.url }}" class="flex items-center justify-between p-3 whitespace-nowrap">
+            {{ link.title }}
+            {%- render 'icon-arrow-right' -%}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>

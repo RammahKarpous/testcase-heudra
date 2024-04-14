@@ -1,19 +1,21 @@
-<form action="/search" class="w-full max-w-64 nav-search-bar">
-  <div class="relative w-full">
-    <input
-      type="text"
-      class="w-full h-full px-2 py-1 text-sm bg-transparent border-b focus:outline-none border-gray-border"
-      placeholder="Vul hier je zoekopdracht"
-    >
+<form action="/search" class="w-full max-w-64 md:max-w-96 nav-search-bar">
+    <div class="relative w-full">
+        <input
+            type="text"
+            class="w-full h-full px-2 py-1 text-sm bg-transparent border-b font-ropa-light focus:outline-none border-gray-border"
+			placeholder="Vul hier je zoekopdracht">
 
-    <div class="absolute -translate-y-1/2 search-icon top-1/2 right-2">{%- render 'icon-search' -%}</div>
-  </div>
+      	<div class="absolute -translate-y-1/2 search-icon top-1/2 right-2">{%- render 'icon-search' -%}</div>
+    </div>
 </form>
 
 {%- style -%}
-  form {
-  }
-
-  form.expanded {
-  }
+	@media screen and not (min-width: 786px) {
+		form {
+		}
+	  
+		form.expanded {
+			
+		}
+	}
 {%- endstyle -%}

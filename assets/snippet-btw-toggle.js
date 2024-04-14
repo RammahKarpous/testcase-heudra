@@ -1,8 +1,12 @@
 window.onload = function() {
-    const btwToggle = document.querySelector('.btw-toggle');
-    const toggle = btwToggle.querySelector('span')
+    const btwToggle = document.querySelectorAll('.btw-toggle');
+    
+    btwToggle.forEach((btw) => {
+        const toggle = btw.querySelector('span');
 
-    btwToggle.addEventListener('click', () => {
-        toggle.classList.toggle('incl');
+        btw.addEventListener('click', () => {
+            toggle.classList.toggle('incl');
+            toggle.classList.toggle('excl');
+        })
     })
 }

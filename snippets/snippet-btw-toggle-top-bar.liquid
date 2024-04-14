@@ -1,0 +1,22 @@
+<div class="relative flex gap-1 px-1 cursor-pointer bg-blue-dark btw-toggle btw-toggle--top-bar">
+    <span class="absolute top-0 left-0 z-0 inline-block w-1/2 h-full transition-all border-2 border-blue-dark bg-blue-medium excl"></span>
+    <p class="relative z-10 block p-1 pr-3 text-xs transition text-blue-dark font-ropa-light">excl.</p>
+    <p class="relative z-10 p-1 text-xs transition text-blue-dark font-ropa-light">incl.</p>
+</div>
+
+{%- style -%}
+.incl {
+    left: 50%;
+    background: #405CA1;
+}
+
+/* Displaying the btw to be exclusief  */
+.btw-toggle--top-bar .excl + p { color: #fff; }
+
+/* Displaying the btw to be inclusief  */
+.btw-toggle--top-bar .incl ~ p {color: #fff; }
+.btw-toggle--top-bar .incl + p {color: #263761; }
+
+{%- endstyle -%}
+
+<script defer src="{{ 'snippet-btw-toggle.js' | asset_url }}" ></script>

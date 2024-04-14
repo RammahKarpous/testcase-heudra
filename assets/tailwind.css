@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    /* Registering the Ropa Sans Pro fonts */
+    @font-face {
+        font-family: 'Ropa Sans Light';
+        src: url(./ropa-sans-pro-light.otf) format('opentype');
+    }
+    
+    @font-face {
+        font-family: 'Ropa Sans Regular';
+        src: url(./ropa-sans-pro-regular.otf) format('opentype');
+    }
+    
+    @font-face {
+        font-family: 'Ropa Sans Bold';
+        src: url(./ropa-sans-pro-bold.otf) format('opentype');
+    }
+    
+    @font-face {
+        font-family: 'Ropa Sans Black';
+        src: url(./ropa-sans-pro-black.otf) format('opentype');
+    }
+
+    /* Registering the Hind fonts */
+    @font-face {
+        font-family: 'Hind light';
+        src: url(./hind-light.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Hind regular';
+        src: url(./hind-regular.ttf) format('truetype');
+    }
+    
+    @font-face {
+        font-family: 'Hind semi bold';
+        src: url(./hind-semi-bold.ttf) format('truetype');
+    }
+}

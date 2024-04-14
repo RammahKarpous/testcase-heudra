@@ -1,5 +1,9 @@
-<div class="container flex items-center justify-between">
-    <p class="text-black">Prijs inclusief/ exclusief BTW:</p>
-
-    {%- render 'snippet-btw-toggle' is_in_mobile_nav: true -%}
+<div class="flex items-center justify-between max-w-screen-xl gap-2">
+    {%- if position == "top-bar" -%}
+        <p class="text-xs text-white">BTW Prijs:</p>
+        {%- render 'snippet-btw-toggle-top-bar' -%}
+    {%- else -%}
+        <p class="text-black">Prijs inclusief/ exclusief BTW:</p>
+        {%- render 'snippet-btw-toggle-mobile-nav' -%}
+    {%- endif -%}
 </div>
