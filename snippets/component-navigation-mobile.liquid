@@ -1,19 +1,20 @@
 {%- liquid
   assign primary_menu_styling = 'bg-white'
+  assign shopping_cart_button = 'bg-blue-dark text-white border-none'
 -%}
 
 <section class="drop-shadow-[0_0px_10px_rgba(0,0,0,16%)] absolute w-full">
   <div class="z-10 -mt-10 overflow-hidden transition bg-body collabsed" id="mobile-navigation-menu">
     {%- render 'component-hamburger-menu' -%}
 
-    <div class="relative z-0 flex flex-col gap-4 pt-12 pb-4">
+    <div class="relative z-0 flex flex-col gap-4 px-4 pt-12 pb-4">
       <div class="flex justify-between max-w-screen-xl">
         {%- render 'component-search-bar' -%}
 
-        <div class="flex items-center gap-2 shrink-0">
+        <a href="tel:" class="flex items-center gap-2 font-bold text-black underline shrink-0 font-hind-semi-bold">
           {%- render 'icon-phone' -%}
-          <p class="font-bold text-black underline font-ropa-light">{{ section.settings.phone_number }}</p>
-        </div>
+          {{ section.settings.phone_number }}
+        </a>
       </div>
 
       <nav class="flex flex-col gap-8">
@@ -23,17 +24,29 @@
               {%- render 'component-navigation-bordered-link',
                 link_text: link.title,
                 link_url: link.url,
-                styles: primary_menu_styling
+                styles: primary_menu_styling,
+                has_arrow: true
               -%}
             </li>
           {%- endfor -%}
         </ul>
 
-        <div class="grid max-w-screen-xl grid-cols-1 gap-3">
+        <ul class="grid max-w-screen-xl grid-cols-1 gap-3">
           {%- for link in linklists['secundaire-menu-mobiel'].links -%}
-            {%- render 'component-navigation-bordered-link', link_text: link.title, link_url: link.url -%}
+            <li>
+              {%- render 'component-navigation-bordered-link', link_text: link.title, link_url: link.url, has_arrow: true -%}
+            </li>
           {%- endfor -%}
-        </div>
+
+          <li>
+            {%- render 'component-navigation-bordered-link',
+              link_text: section.settings.shopping_cart_text,
+              link_url: link.url,
+              styles: shopping_cart_button,
+              has_arrow: false
+            -%}
+          </li>
+        </ul>
       </nav>
 
       {%- render 'component-btw' -%}

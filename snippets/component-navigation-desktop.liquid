@@ -1,4 +1,4 @@
-<section class="flex items-center justify-between max-w-screen-xl px-4 mx-auto bg-white">
+<section class="flex items-center justify-between max-w-screen-xl px-4 mx-auto overflow-x-auto bg-white">
   <nav>
     <ul class="flex">
       {%- for link in linklists['main-menu'].links -%}
@@ -14,7 +14,7 @@
         <li class="group/main-nav">
           <a
             href="{{ link.url }}"
-            class="flex text-xl items-center gap-2 py-5 font-ropa-regular px-7 {{ extra_styling }}"
+            class="flex text-xl items-center gap-2 py-5 font-ropa-regular whitespace-nowrap px-7 {{ extra_styling }}"
           >
             {{ link.title }}
             <span class="rotate-90 group-hover/main-nav:-rotate-90 group-hover/first-link:-rotate-90">
@@ -39,7 +39,7 @@
     <ul class="flex px-4 mx-auto">
       {%- for link in linklists['secundaire-menu-desktop'].links -%}
         <li class="group/main-nav">
-          <a href="{{ link.url }}" class="flex font-light items-center gap-2 font-hind-light py-5 px-7 {{ extra_styling }}">
+          <a href="{{ link.url }}" class="flex font-light whitespace-nowrap items-center gap-2 font-hind-light py-5 px-7 {{ extra_styling }}">
             {{ link.title }}
             <span class="rotate-90 group-hover/main-nav:-rotate-90 group-hover/first-link:-rotate-90">
               {%- render 'icon-arrow-right', color: first_arrow_styling -%}

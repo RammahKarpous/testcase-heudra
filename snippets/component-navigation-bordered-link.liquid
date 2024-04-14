@@ -2,10 +2,11 @@
 The navigation link component is used for the mobile links (main and dropdown) and for the desktop dropdown links. 
 
 Accepts:
-    - link_url:     {String}    The destination url of the link
-    - link_text:    {String}    The text to be displayed
-    - has_graphic:  {Boolean}   Whether or not do display the aanhangwagen graphic
-    - styles:       {String}    Spefic styles for the navigation link
+    - link_url:     {String}            The destination url of the link
+    - link_text:    {String}            The text to be displayed
+    - has_graphic:  {Boolean}           Whether or not do display the aanhangwagen graphic
+    - has_arrow:    {Boolean: true}     Displays the arrow 
+    - styles:       {String}            Spefic styles for the navigation link
 {% endcomment %}
 
 <a href="{{ link_url }}" class="flex items-center gap-8 transition-all group p-4 border border-gray-border hover:border-blue-dark {{ styles }}">
@@ -16,8 +17,10 @@ Accepts:
     <span class="flex items-center gap-2">
         {{ link_text }}
 
-        <span class="transition group-hover:translate-x-2">
-            {%- render 'icon-arrow-right' -%}
-        </span>
+        {%- if has_arrow -%}
+            <span class="transition group-hover:translate-x-2">
+                {%- render 'icon-arrow-right' -%}
+            </span>
+        {%- endif -%}
     </span>
 </a>

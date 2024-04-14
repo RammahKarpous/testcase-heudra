@@ -729,6 +729,18 @@ video {
   left: 600px;
 }
 
+.-right-\[600px\]{
+  right: -600px;
+}
+
+.right-\[600px\]{
+  right: 600px;
+}
+
+.-right-0{
+  right: -0px;
+}
+
 .-z-10{
   z-index: -10;
 }
@@ -854,6 +866,62 @@ video {
   width: 2.5rem;
 }
 
+.w-\[700px\]{
+  width: 700px;
+}
+
+.w-\[1700px\]{
+  width: 1700px;
+}
+
+.w-\[1300px\]{
+  width: 1300px;
+}
+
+.w-\[1200px\]{
+  width: 1200px;
+}
+
+.w-\[1250px\]{
+  width: 1250px;
+}
+
+.w-2\/3{
+  width: 66.666667%;
+}
+
+.w-3\/5{
+  width: 60%;
+}
+
+.w-4\/5{
+  width: 80%;
+}
+
+.w-4\/6{
+  width: 66.666667%;
+}
+
+.w-5\/6{
+  width: 83.333333%;
+}
+
+.w-7\/12{
+  width: 58.333333%;
+}
+
+.w-9\/12{
+  width: 75%;
+}
+
+.w-8\/12{
+  width: 66.666667%;
+}
+
+.w-\[70\%\]{
+  width: 70%;
+}
+
 .max-w-64{
   max-width: 16rem;
 }
@@ -973,6 +1041,10 @@ video {
   overflow: hidden;
 }
 
+.overflow-x-auto{
+  overflow-x: auto;
+}
+
 .overflow-x-hidden{
   overflow-x: hidden;
 }
@@ -997,12 +1069,20 @@ video {
   border-width: 4px;
 }
 
+.border-0{
+  border-width: 0px;
+}
+
 .border-b{
   border-bottom-width: 1px;
 }
 
 .border-r{
   border-right-width: 1px;
+}
+
+.border-none{
+  border-style: none;
 }
 
 .border-blue-dark{
@@ -1051,6 +1131,11 @@ video {
 .bg-gray-border{
   --tw-bg-opacity: 1;
   background-color: rgb(233 234 238 / var(--tw-bg-opacity));
+}
+
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 16 43 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r{
@@ -1165,6 +1250,14 @@ video {
 
 .pt-6{
   padding-top: 1.5rem;
+}
+
+.pb-1{
+  padding-bottom: 0.25rem;
+}
+
+.pt-2{
+  padding-top: 0.5rem;
 }
 
 .font-hind-light{
@@ -1341,6 +1434,11 @@ video {
     max-width: 24rem;
   }
 
+  .md\:translate-y-5{
+    --tw-translate-y: 1.25rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
   .md\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1360,6 +1458,17 @@ video {
   }
 
   .lg\:grid-cols-\[300px_1fr\]{
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+@media (min-width: 1280px){
+  .xl\:translate-y-0{
+    --tw-translate-y: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .xl\:grid-cols-\[300px_1fr\]{
     grid-template-columns: 300px 1fr;
   }
 }

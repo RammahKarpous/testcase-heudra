@@ -4,8 +4,8 @@
   	</div>
 
 	<div class="relative z-10 px-1 py-2 md:pb-0 bg-gradient-to-r from-blue-dark to-blue-medium logo-wrapper">
-		<div class="max-w-screen-xl mx-auto px-4 lg:grid lg:grid-cols-[300px_1fr] items-center">
-			<img src="{{ 'logo.svg' | asset_url }}" class="w-36 md:w-48" width="192" height="52" alt="Heudra aanhangwagens logo">
+		<div class="max-w-screen-xl mx-auto px-4 lg:grid xl:grid-cols-[300px_1fr] items-center">
+			<img src="{{ 'logo.svg' | asset_url }}" class="w-36 md:w-48 md:translate-y-5 xl:translate-y-0" width="192" height="52" alt="Heudra aanhangwagens logo">
 
 			<div class="flex-col items-end hidden w-full gap-2 md:flex">
 				<div>
@@ -27,18 +27,17 @@
 					{%- render 'snippet-reviews' -%}
 
 					<div class="flex items-center gap-2">
-						<div class="flex items-center gap-1 p-2 text-white rounded-sm bg-blue-dark">
-							{%- render 'icon-phone' -%}
-							<a href="tel:+{{ section.settings.phone_number | remove: " " }}" class="font-hind-semi-bold">{{ section.settings.phone_number }}</a>
-						</div>
+						<a href="tel:+{{ section.settings.phone_number | remove: " " }}" class="flex items-center gap-1 px-2 pt-2 pb-1 text-white rounded-sm font-hind-semi-bold bg-blue-dark">
+							{%- render 'icon-phone' -%} {{ section.settings.phone_number }} 
+						</a>
 
-						<div class="flex items-center justify-center w-10 h-10 bg-gray-border">
+						<div class="flex items-center justify-center w-10 h-10 cursor-pointer bg-gray-border">
 							{%- render 'icon-cart' -%}
 						</div>
 					</div>
 				</div>
 
-				<div class="absolute bottom-0 z-0 invisible w-full h-16 bg-white md:visible left-[600px] actions-bar"></div>
+				<div class="absolute bottom-0 right-0 z-0 invisible h-16 bg-white md:visible actions-bar"></div>
 			</div>
 		</div>
 	</div>
@@ -56,14 +55,39 @@
 	.logo-wrapper {
 		clip-path: polygon(100% 0, 100% 30%, 85% 30%, 80% 100%, 0 100%, 0 0);
 	}
-
-	.actions-bar {
-		clip-path: polygon(2% 0, 100% 0, 100% 100%, 0% 100%);
-	}
-
+	
 	@media screen and (min-width: 768px) {
 		.logo-wrapper {
 			clip-path: none;
+		}
+	}
+
+	.actions-bar {
+		clip-path: polygon(2% 0, 100% 0, 100% 100%, 0% 100%);
+		width: 100%;
+	}
+
+	@media screen and (min-width: 1280px) {
+		.actions-bar {
+			width: 78%;
+		}
+	}
+
+	@media screen and (min-width: 1430px) {
+		.actions-bar {
+			width: 77%;
+		}
+	}
+	
+	@media screen and (min-width: 1430px) {
+		.actions-bar {
+			width: 71%;
+		}
+	}
+	
+	@media screen and (min-width: 1770px) {
+		.actions-bar {
+			width: 70%;
 		}
 	}
 {%- endstyle -%}
@@ -92,6 +116,12 @@
 			"id": "phone_number",
 			"label": "Telefoon nummer",
 			"default": "0488 44 10 58"
+		},
+		{
+			"type": "text",
+			"id": "shopping_cart_text",
+			"label": "Winkelwagen tekst",
+			"default": "Bekijk winkelwagen"
 		}
 	],
 	"presets": [
