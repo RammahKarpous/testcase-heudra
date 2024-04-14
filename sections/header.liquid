@@ -1,90 +1,96 @@
-<section class="relative h-[400px] md:h-[670px] bg-center bg-no-repeat header-image z-0" style="background-image: url({{ 'header-image.png' | asset_url }})">
-    <span class="absolute z-0 w-full h-full gradient"></span>
+<section
+  class="relative h-[400px] md:h-[670px] bg-center bg-no-repeat header-image z-0"
+  style="background-image: url({{ 'header-image.png' | asset_url }})"
+>
+  <span class="absolute z-0 w-full h-full gradient"></span>
 
-    <div class="absolute z-20 w-full h-full max-w-screen-xl px-4 mx-auto -translate-x-1/2 left-1/2">
-        <div class="absolute flex flex-col gap-3 bottom-20">
-            <h1 class="max-w-[438px] text-white text-7xl font-ropa-black">De nummer <span class="text-yellow">één</span> in aanhangwagens</h1>
-            <p class="text-3xl text-white font-ropa-regular">Bekijk een van onze 400+ modellen</p>
+  <div class="absolute z-20 w-full h-full max-w-screen-xl px-4 mx-auto -translate-x-1/2 left-1/2">
+    <div class="absolute flex flex-col gap-3 bottom-20">
+      <h1 class="max-w-[438px] text-white text-7xl font-ropa-black">
+        De nummer <span class="text-yellow">één</span> in aanhangwagens
+      </h1>
+      <p class="text-3xl text-white font-ropa-regular">Bekijk een van onze 400+ modellen</p>
 
-            <div class="flex gap-2 mt-10">
-                {%- render 'button', 
-                    text: "Ontdek onze modellen", 
-                    type: "primary" -%}
-                    
-                {%- render 'button', 
-                    text: "Contact opnemen", 
-                    type: "secondary" -%}
-            </div>
-        </div>
+      <div class="flex gap-2 mt-10">
+        {%- render 'button', text: 'Ontdek onze modellen', type: 'primary' -%}
 
-        <div class="absolute bottom-3 right-0 flex gap-3 p-2 overflow-x-scroll w-[700px] text-lg">
-            <p class="flex items-center gap-2 font-ropa-regular whitespace-nowrap">{%- render 'icon-check' -%} Grootste assortiment in nieuwe aanhangwagens</p>
-            <p class="flex items-center gap-2 font-ropa-regular whitespace-nowrap">{%- render 'icon-check' -%} Uitgebreide technische mogelijkheden</p>
-        </div>
+        {%- render 'button', text: 'Contact opnemen', type: 'secondary' -%}
+      </div>
     </div>
 
-    <div class="absolute bottom-0 right-0 z-0 invisible h-16 bg-body md:visible section-header decorational-shape"></div>
+    <div class="absolute bottom-3 right-0 flex gap-3 p-2 overflow-x-scroll w-[700px] text-lg">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when "plus_punt" -%}
+            <p class="flex items-center gap-2 font-ropa-regular whitespace-nowrap">
+              {%- render 'icon-check' -%}
+              {{ block.settings.plus_point }}
+            </p>
+          {%- else -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 right-0 z-0 invisible h-16 bg-body md:visible section-header decorational-shape"></div>
 </section>
 
 {%- style -%}
-	.header-image {
-		background-size: 2000px;
-		background-position: center bottom;
-	}
-	
-	@media screen and (min-width: 400px) {
-		.header-image {
-			background-size: cover;
-		}
-	}
+  .header-image {
+    background-size: 2000px;
+    background-position: center bottom;
+  }
+
+  @media screen and (min-width: 400px) {
+    .header-image {
+      background-size: cover;
+    }
+  }
 
   .gradient {
-		background: transparent linear-gradient(62deg, #263761 0%, #26376100 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(62deg, #263761 0%, #26376100 100%) 0% 0% no-repeat padding-box;
   }
 
   @media screen and (min-width: 1280px) {
-		.section-header.decorational-shape {
-			width: 80%;
-		}
-	}
+    .section-header.decorational-shape {
+      width: 80%;
+    }
+  }
 
-	@media screen and (min-width: 1430px) {
-		.section-header.decorational-shape {
-			width: 77%;
-		}
-	}
-	
-	@media screen and (min-width: 1770px) {
-		.section-header.decorational-shape {
-			width: 55%;
-		}
-	}
+  @media screen and (min-width: 1430px) {
+    .section-header.decorational-shape {
+      width: 77%;
+    }
+  }
+
+  @media screen and (min-width: 1770px) {
+    .section-header.decorational-shape {
+      width: 55%;
+    }
+  }
 {%- endstyle -%}
 
 {% schema %}
 {
-    "name": "Header",
-    "settings": [
-
-    ],
-    "presets": [
+  "name": "Header",
+  "settings": [],
+  "presets": [
+    {
+      "name": "header"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "plus_punt",
+      "name": "Plus punt",
+      "settings": [
         {
-            "name": "header"
+          "type": "text",
+          "id": "plus_point",
+          "label": "Plus punt"
         }
-    ],
-    "blocks": [
-        {
-            "type": "text",
-            "name": "Plus punten",
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "plus_point",
-                    "label": "Plus punt"
-                }
-            ]
-        }
-        
-    ]
+      ]
+    }
+  ]
 }
 {% endschema %}
