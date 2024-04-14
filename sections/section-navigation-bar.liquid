@@ -37,7 +37,7 @@
 					</div>
 				</div>
 
-				<div class="absolute bottom-0 right-0 z-0 invisible h-16 bg-white md:visible actions-bar"></div>
+				<div class="absolute bottom-0 right-0 z-0 invisible h-16 bg-white md:visible decorational-shape"></div>
 			</div>
 		</div>
 	</div>
@@ -46,7 +46,7 @@
 		{%- render 'component-navigation-mobile' -%}
 	</div>
 
-	<div class="hidden desktop-nav md:block">
+	<div class="hidden bg-white desktop-nav md:block">
 		{%- render 'component-navigation-desktop' -%}
 	</div>
 </section>
@@ -62,31 +62,31 @@
 		}
 	}
 
-	.actions-bar {
+	.decorational-shape {
 		clip-path: polygon(2% 0, 100% 0, 100% 100%, 0% 100%);
 		width: 100%;
 	}
 
 	@media screen and (min-width: 1280px) {
-		.actions-bar {
+		.decorational-shape {
 			width: 78%;
 		}
 	}
 
 	@media screen and (min-width: 1430px) {
-		.actions-bar {
+		.decorational-shape {
 			width: 77%;
 		}
 	}
 	
 	@media screen and (min-width: 1430px) {
-		.actions-bar {
+		.decorational-shape {
 			width: 71%;
 		}
 	}
 	
 	@media screen and (min-width: 1770px) {
-		.actions-bar {
+		.decorational-shape {
 			width: 70%;
 		}
 	}

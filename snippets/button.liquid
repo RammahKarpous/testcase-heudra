@@ -1,6 +1,14 @@
 {% comment %} 
 Accepts:
-    - text: {String} This is the text displayed on the button.
+    - text: {String}    This is the text displayed on the button.
+    - type: {String}    Determens the presentation of the button
 {% endcomment %}
 
-<button>{{ text }}</button>
+{%- case type -%}
+    {%- when "primary" -%}
+        {%- assign styling = "bg-yellow text-black" -%}
+    {%- else -%}
+        {%- assign styling = "border border-gray-border text-white" -%}
+    {%- endcase -%}
+
+<button class="py-4 px-12 {{ styling }}">{{ text }}</button>
