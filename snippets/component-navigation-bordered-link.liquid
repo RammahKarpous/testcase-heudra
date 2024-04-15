@@ -9,7 +9,7 @@ Accepts:
     - styles:       {String}            Spefic styles for the navigation link
 {% endcomment %}
 
-<a href="{{ link_url }}" class="flex items-center gap-8 transition-all group p-4 border border-gray-border hover:border-blue-dark {{ styles }}">
+<a href="{{ link_url }}" class="flex items-center gap-8 transition-all group p-4 font-ropa-light border border-gray-border hover:border-blue-dark {{ styles }}">
     {%- if has_graphic == true -%}
         <img src="{{ 'aanhangwagen.png' | asset_url }}" width="55" height="82.82" class="pr-5 border-r border-gray-border" alt="Aanhangwagen icoon">
     {%- endif -%}

@@ -1,21 +1,21 @@
 {%- liquid
-  assign primary_menu_styling = 'bg-white'
-  assign shopping_cart_button = 'bg-blue-dark text-white border-none'
+    assign primary_menu_styling = 'bg-white'
+    assign shopping_cart_button = 'bg-blue-dark text-white border-none'
 -%}
 
-<section class="drop-shadow-[0_0px_10px_rgba(0,0,0,16%)] absolute w-full">
-  <div class="z-10 -mt-10 overflow-hidden transition bg-body collabsed" id="mobile-navigation-menu">
+<section class="drop-shadow-[0_0px_10px_rgba(0,0,0,16%)] absolute z-20 w-full">
+  <div class="-mt-10 overflow-hidden transition bg-body collabsed" id="mobile-navigation-menu">
     {%- render 'component-hamburger-menu' -%}
 
-    <div class="relative z-0 flex flex-col gap-4 px-4 pt-12 pb-4">
-      <div class="flex justify-between max-w-screen-xl">
-        {%- render 'component-search-bar' -%}
+    <div class="relative z-0 flex flex-col gap-5 px-4 pt-12 pb-4">
+        <div class="flex justify-between max-w-screen-xl">
+            {%- render 'component-search-bar' -%}
 
-        <a href="tel:" class="flex items-center gap-2 font-bold text-black underline shrink-0 font-hind-semi-bold">
-          {%- render 'icon-phone' -%}
-          {{ section.settings.phone_number }}
-        </a>
-      </div>
+            <a href="tel:" class="flex items-center gap-2 font-bold text-black underline shrink-0 font-hind-semi-bold">
+                {%- render 'icon-phone' -%}
+                {{ section.settings.phone_number }}
+            </a>
+        </div>
 
       <nav class="flex flex-col gap-8">
         <ul class="grid max-w-screen-xl grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">

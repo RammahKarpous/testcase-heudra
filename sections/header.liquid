@@ -1,20 +1,26 @@
 <section
-  class="relative h-[400px] md:h-[670px] bg-center bg-no-repeat header-image z-0"
-  style="background-image: url({{ 'header-image.png' | asset_url }})"
->
-  <span class="absolute z-0 w-full h-full gradient"></span>
+	class="relative h-[400px] md:h-[670px] bg-center bg-no-repeat header-image"
+	style="background-image: url({{ 'header-image.png' | asset_url }})">
 
-  <div class="absolute z-20 w-full h-full max-w-screen-xl px-4 mx-auto -translate-x-1/2 left-1/2">
+  	<span class="absolute w-full h-full gradient"></span>
+
+  <div class="absolute w-full h-full max-w-screen-xl px-4 mx-auto -translate-x-1/2 left-1/2">
     <div class="absolute flex flex-col gap-3 bottom-20">
-      <h1 class="max-w-[438px] text-white text-7xl font-ropa-black">
-        De nummer <span class="text-yellow">één</span> in aanhangwagens
+      <h1 class="max-w-[438px] text-white text-5xl md:text-7xl font-ropa-black">
+		{{ section.settings.page_heading }}
       </h1>
-      <p class="text-3xl text-white font-ropa-regular">Bekijk een van onze 400+ modellen</p>
+      <p class="text-3xl text-white font-ropa-regular">{{ section.settings.sub_text }}</p>
 
       <div class="flex gap-2 mt-10">
-        {%- render 'button', text: 'Ontdek onze modellen', type: 'primary' -%}
-
-        {%- render 'button', text: 'Contact opnemen', type: 'secondary' -%}
+		{%- for block in section.blocks -%}
+			{%- case block.type -%}
+				{%- when "button" -%}
+					{%- render 'button', 
+						text: block.settings.button_text, 
+						type: block.settings.button_type,
+						secondary_text: block.settings.secondary_button_text -%}
+			{%- endcase -%}
+		{%- endfor -%}
       </div>
     </div>
 
@@ -32,7 +38,7 @@
     </div>
   </div>
 
-  <div class="absolute bottom-0 right-0 z-0 invisible h-16 bg-body md:visible section-header decorational-shape"></div>
+  <div class="absolute bottom-0 right-0 invisible h-16 bg-body md:visible section-header decorational-shape"></div>
 </section>
 
 {%- style -%}
@@ -73,24 +79,68 @@
 {% schema %}
 {
   "name": "Header",
-  "settings": [],
+  "settings": [
+	{
+		"type": "textarea",
+		"id": "page_heading",
+		"label": "Pagina titel",
+		"default": "De nummer <span class='text-yellow'>één</span> in aanhangwagens"
+	},
+	{
+		"type": "text",
+		"id": "sub_text",
+		"label": "Header sub-tekst",
+		"default": "Bekijk een van onze 400+ modellen"
+	}
+  ],
   "presets": [
     {
       "name": "header"
     }
   ],
-  "blocks": [
-    {
-      "type": "plus_punt",
-      "name": "Plus punt",
-      "settings": [
-        {
-          "type": "text",
-          "id": "plus_point",
-          "label": "Plus punt"
-        }
-      ]
-    }
-  ]
+	"blocks": [
+		{
+      		"type": "plus_punt",
+			"name": "Plus punt",
+			"settings": [
+				{
+					"type": "text",
+					"id": "plus_point",
+					"label": "Plus punt"
+					}
+			]
+		},
+    	{
+      		"type": "button",
+			"name": "Button",
+			"settings": [
+				{
+					"type": "select",
+					"id": "button_type",
+					"label": "Knop type",
+					"options": [
+						{
+							"label": "Primaire",
+							"value": "primary"
+						},
+						{
+							"label": "Secundaire",
+							"value": "secondary"
+						}
+					]
+				},
+				{
+					"type": "text",
+					"id": "button_text",
+					"label": "Knop teksst"
+				},
+				{
+					"type": "text",
+					"id": "secondary_button_text",
+					"label": "Secundaire knop tekst (optioneel)"
+				}
+      		]
+    	}
+  	]
 }
 {% endschema %}

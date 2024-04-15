@@ -1,14 +1,28 @@
 {% comment %} 
 Accepts:
-    - text: {String}    This is the text displayed on the button.
-    - type: {String}    Determens the presentation of the button
+    - text:             {String}    This is the text displayed on the button.
+    - secondary_text    {String}    (Optionally) Text that will be displayed on hover.
+    - type:             {String}    Determens the presentation of the button
 {% endcomment %}
 
-{%- case type -%}
-    {%- when "primary" -%}
-        {%- assign styling = "bg-yellow text-black" -%}
-    {%- else -%}
-        {%- assign styling = "border border-gray-border text-white" -%}
-    {%- endcase -%}
+{%- liquid
+    case type
+        when "primary"
+            assign styling = "bg-yellow text-black"
+        else
+            assign styling = "border border-gray-border text-white"
+        endcase
 
-<button class="py-4 px-12 {{ styling }}">{{ text }}</button>
+    if secondary_text != blank
+        assign primary_button_hover = "group-hover:hidden max-sm:group-hover:visible"
+        assign secondary_button_hover = "group-hover:block max-sm:hidden"
+    endif
+-%}
+
+<button class="py-4 px-12 font-ropa-regular {{ styling }} group">
+    <span class="primary_text {{ primary_button_hover }}">{{ text }}</span>
+    
+    {%- if secondary_text -%}
+        <span class="secondary_text hidden underline {{ secondary_button_hover }}">{{ secondary_text }}</span>
+    {%- endif -%}
+</button>

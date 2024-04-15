@@ -3,7 +3,7 @@
     	{%- render 'snippet-reviews' -%}
   	</div>
 
-	<div class="relative z-10 px-1 py-2 md:pb-0 bg-gradient-to-r from-blue-dark to-blue-medium logo-wrapper">
+	<div class="relative z-30 px-1 py-2 md:pb-0 bg-gradient-to-r from-blue-dark to-blue-medium logo-wrapper">
 		<div class="max-w-screen-xl mx-auto px-4 lg:grid xl:grid-cols-[300px_1fr] items-center">
 			<img src="{{ 'logo.svg' | asset_url }}" class="w-36 md:w-48 md:translate-y-5 xl:translate-y-0" width="192" height="52" alt="Heudra aanhangwagens logo">
 
@@ -27,11 +27,11 @@
 					{%- render 'snippet-reviews' -%}
 
 					<div class="flex items-center gap-2">
-						<a href="tel:+{{ section.settings.phone_number | remove: " " }}" class="flex items-center gap-1 px-2 pt-2 pb-1 text-white rounded-sm font-hind-semi-bold bg-blue-dark">
-							{%- render 'icon-phone' -%} {{ section.settings.phone_number }} 
+						<a href="tel:+{{ section.settings.phone_number | remove: " " }}" class="flex items-center gap-2 px-3 pt-2 pb-1 text-white rounded-sm font-hind-semi-bold bg-blue-dark">
+							<span class="inline-block mb-[3px]">{%- render 'icon-phone' -%}</span> {{ section.settings.phone_number }} 
 						</a>
 
-						<div class="flex items-center justify-center w-10 h-10 cursor-pointer bg-gray-border">
+						<div class="flex items-center justify-center rounded-sm cursor-pointer w-9 h-9 bg-gray-border">
 							{%- render 'icon-cart' -%}
 						</div>
 					</div>
@@ -42,7 +42,7 @@
 		</div>
 	</div>
 
-	<div class="z-0 mobile-nav md:hidden">
+	<div class="mobile-nav md:hidden">
 		{%- render 'component-navigation-mobile' -%}
 	</div>
 
